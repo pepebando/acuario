@@ -1,3 +1,13 @@
+const express = require("express");
+const app = express();
+const PORT = process.env.PORT || 3030;
+
+// your code
+
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
+});
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -7,7 +17,6 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
