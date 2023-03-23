@@ -6,6 +6,15 @@ app.get("/", (req, res) => res.type('html').send(html));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
+app.post('/', function(request, respond) {
+  console.log(request.headers)
+  var image = request.body
+  fs.writeFile('test.jpg', image, function(err){
+    if (err) throw err
+        console.log('File saved.');
+          });
+  respond.end('thanks');
+  });
 
 const html = `
 <!DOCTYPE html>
